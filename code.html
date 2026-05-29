@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KOTSA 한국교통안전공단</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#004b91",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#d5e3ff",
+                    "on-primary-container": "#001b3c",
+                    "secondary": "#994700",
+                    "on-secondary": "#ffffff",
+                    "secondary-container": "#ffdbc8",
+                    "on-secondary-container": "#321200",
+                    "tertiary": "#273549",
+                    "on-tertiary": "#ffffff",
+                    "surface": "#f7f9fb",
+                    "on-surface": "#191c1e",
+                    "surface-variant": "#e0e3e5",
+                    "on-surface-variant": "#424751",
+                    "outline": "#727782",
+                    "outline-variant": "#c2c6d2",
+                    "background": "#f7f9fb",
+                    "on-background": "#191c1e",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-low": "#f2f4f6",
+                    "surface-container": "#eceef0",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-container-highest": "#e0e3e5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "section-gap": "120px",
+                    "container-max": "1280px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "body-md": ["Noto Sans"],
+                    "headline-lg": ["Noto Sans"],
+                    "headline-md": ["Noto Sans"],
+                    "display-lg": ["Noto Sans"],
+                    "label-md": ["Noto Sans"],
+                    "label-sm": ["Noto Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .hero-overlay {
+            background: linear-gradient(180deg, rgba(0, 75, 145, 0.4) 0%, rgba(0, 75, 145, 0.8) 100%);
+        }
+        .nav-link-active::after {
+            content: '';
+            position: absolute;
+            bottom: -24px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #004b91;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased">
+<!-- Top Utility Bar -->
+<div class="bg-surface-container-low border-b border-outline-variant">
+<div class="max-w-container-max mx-auto px-margin-desktop h-10 flex justify-end items-center gap-6 text-label-sm text-on-surface-variant">
+<a class="hover:text-primary" href="#">로그인</a>
+<a class="hover:text-primary" href="#">회원가입</a>
+<a class="hover:text-primary" href="#">English</a>
+<div class="flex items-center gap-1 cursor-pointer hover:text-primary">
+<span class="material-symbols-outlined !text-sm">search</span>
+<span>검색</span>
+</div>
+</div>
+</div>
+<!-- Main Header -->
+<header class="bg-white border-b border-outline-variant sticky top-0 z-50 shadow-sm">
+<div class="max-w-container-max mx-auto px-margin-desktop h-20 flex justify-between items-center">
+<div class="flex items-center gap-12">
+<a class="flex items-center" href="/">
+<span class="text-primary text-3xl font-bold tracking-tighter">KOTSA</span>
+<span class="ml-2 text-on-surface-variant text-label-sm border-l border-outline-variant pl-2 hidden sm:block leading-tight">한국교통안전공단</span>
+</a>
+<nav class="hidden xl:flex items-center gap-10 h-full">
+<div class="relative group h-full flex items-center">
+<a class="text-on-surface font-semibold hover:text-primary py-7" href="#">사업소개</a>
+</div>
+<div class="relative group h-full flex items-center">
+<a class="text-on-surface font-semibold hover:text-primary py-7" href="#">정보공개</a>
+</div>
+<div class="relative group h-full flex items-center">
+<a class="text-on-surface font-semibold hover:text-primary py-7" href="#">알림마당</a>
+</div>
+<div class="relative group h-full flex items-center">
+<a class="text-on-surface font-semibold hover:text-primary py-7" href="#">국민참여</a>
+</div>
+<div class="relative group h-full flex items-center">
+<a class="text-on-surface font-semibold hover:text-primary py-7" href="#">공단소개</a>
+</div>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="xl:hidden p-2 text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="hidden md:flex bg-primary text-white px-5 py-2.5 rounded-lg font-label-md items-center gap-2 cursor-pointer hover:bg-opacity-90 transition-all">
+<span class="material-symbols-outlined !text-xl">calendar_today</span>
+                예약/검사 바로가기
+            </div>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section with Integrated Search -->
+<section class="relative h-[560px] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="KOTSA Hero Background" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIpD3SiMiPOk__ePcdLbrd2oci8Xl5LTq1MEZQg7ugOK1l6mBrjEVCbbnIzvSssj5bPSXEjDrFjcMUynoHGDFLWZwOte610kWj4I97CMPyp_OMBQ_vWmkCFsjfdLl_qQa-Y6ONk63fgGzXEBHCBDtJPkfumA3nzt8kt5czW_CFj3XxCfsTdCieAqmLGkmpg8b3FMWl5isz2qNvGznMOyCPE76hThVRcaJYsZ-vL_CrZC8C8kfddtOFdzpZfG2_LhEcRECxDEEgJQaz"/>
+<div class="absolute inset-0 hero-overlay"></div>
+</div>
+<div class="relative z-10 w-full px-margin-desktop max-w-container-max mx-auto text-center text-white">
+<h1 class="text-display-lg font-bold mb-4 drop-shadow-md">안전하고 행복한 미래를 여는 TS 교통안전</h1>
+<p class="text-body-lg mb-10 opacity-90">자동차 검사부터 교통안전 교육까지, 국민의 안전을 책임집니다.</p>
+<!-- Central Search Bar -->
+<div class="max-w-3xl mx-auto mb-12 relative group">
+<div class="flex items-center bg-white rounded-full p-2 shadow-2xl overflow-hidden ring-4 ring-white/20">
+<input class="flex-1 px-8 py-4 text-on-surface text-body-lg border-none focus:ring-0 placeholder-on-surface-variant/60" placeholder="서비스 명칭, 법령, 차량 번호 등을 입력하세요" type="text"/>
+<button class="bg-primary text-white px-10 py-4 rounded-full font-bold flex items-center gap-2 hover:bg-opacity-90 transition-all">
+<span class="material-symbols-outlined">search</span>
+                        검색
+                    </button>
+</div>
+</div>
+<!-- Hero Quick Menus -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+<a class="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl hover:bg-white/20 transition-all group" href="#">
+<span class="material-symbols-outlined !text-3xl mb-2 block text-secondary-container">directions_car</span>
+<span class="font-semibold">자동차 검사 예약</span>
+</a>
+<a class="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl hover:bg-white/20 transition-all group" href="#">
+<span class="material-symbols-outlined !text-3xl mb-2 block text-secondary-container">assignment_ind</span>
+<span class="font-semibold">자격시험 접수</span>
+</a>
+<a class="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl hover:bg-white/20 transition-all group" href="#">
+<span class="material-symbols-outlined !text-3xl mb-2 block text-secondary-container">psychology</span>
+<span class="font-semibold">운전적성정밀검사</span>
+</a>
+<a class="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-xl hover:bg-white/20 transition-all group" href="#">
+<span class="material-symbols-outlined !text-3xl mb-2 block text-secondary-container">location_on</span>
+<span class="font-semibold">검사소 위치 찾기</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Key Services Section (Card Style) -->
+<section class="py-24 bg-white">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="text-headline-lg font-bold text-primary mb-2">주요 서비스</h2>
+<p class="text-on-surface-variant">한국교통안전공단이 제공하는 전문 안전 서비스를 확인하세요.</p>
+</div>
+<a class="text-primary font-semibold flex items-center gap-1 hover:underline" href="#">
+                    전체 서비스 보기 <span class="material-symbols-outlined !text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="group bg-surface-container-lowest border border-outline-variant p-8 rounded-2xl hover:border-primary hover:shadow-xl transition-all">
+<div class="w-14 h-14 rounded-xl bg-primary/5 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined !text-3xl">build</span>
+</div>
+<h3 class="text-headline-md font-bold mb-3">자동차 검사</h3>
+<p class="text-on-surface-variant text-body-md mb-6 leading-relaxed">내 차의 안전을 위한 정기검사, 종합검사 및 튜닝 승인 절차를 안내합니다.</p>
+<ul class="space-y-2 text-label-md text-on-surface">
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 bg-primary rounded-full"></span> 정기/종합 검사 예약
+                        </li>
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 bg-primary rounded-full"></span> 튜닝 승인 및 검사
+                        </li>
+</ul>
+</div>
+<!-- Card 2 -->
+<div class="group bg-surface-container-lowest border border-outline-variant p-8 rounded-2xl hover:border-primary hover:shadow-xl transition-all">
+<div class="w-14 h-14 rounded-xl bg-primary/5 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined !text-3xl">badge</span>
+</div>
+<h3 class="text-headline-md font-bold mb-3">자격시험</h3>
+<p class="text-on-surface-variant text-body-md mb-6 leading-relaxed">버스, 택시, 화물 운수종사자 자격시험 및 철도/항공 자격관리를 수행합니다.</p>
+<ul class="space-y-2 text-label-md text-on-surface">
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 bg-primary rounded-full"></span> 운수종사자 자격시험
+                        </li>
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 bg-primary rounded-full"></span> 자격증 발급/재발급
+                        </li>
+</ul>
+</div>
+<!-- Card 3 -->
+<div class="group bg-surface-container-lowest border border-outline-variant p-8 rounded-2xl hover:border-primary hover:shadow-xl transition-all">
+<div class="w-14 h-14 rounded-xl bg-primary/5 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined !text-3xl">safety_check</span>
+</div>
+<h3 class="text-headline-md font-bold mb-3">교통안전</h3>
+<p class="text-on-surface-variant text-body-md mb-6 leading-relaxed">도로, 철도, 항공 전 분야의 사고 예방 및 안전 교육을 총괄합니다.</p>
+<ul class="space-y-2 text-label-md text-on-surface">
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 bg-primary rounded-full"></span> 도로안전 진단
+                        </li>
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 bg-primary rounded-full"></span> 어린이 교통안전 교육
+                        </li>
+</ul>
+</div>
+<!-- Card 4 -->
+<div class="group bg-surface-container-lowest border border-outline-variant p-8 rounded-2xl hover:border-primary hover:shadow-xl transition-all">
+<div class="w-14 h-14 rounded-xl bg-primary/5 flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined !text-3xl">analytics</span>
+</div>
+<h3 class="text-headline-md font-bold mb-3">자동차 365</h3>
+<p class="text-on-surface-variant text-body-md mb-6 leading-relaxed">자동차 생애주기 통합 정보와 빅데이터 기반 안전 정보를 제공합니다.</p>
+<ul class="space-y-2 text-label-md text-on-surface">
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 bg-primary rounded-full"></span> 자동차 이력 조회
+                        </li>
+<li class="flex items-center gap-2">
+<span class="w-1 h-1 bg-primary rounded-full"></span> 중고차 시세 확인
+                        </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Real-time Safety Dashboard -->
+<section class="py-20 bg-surface-container-low">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<h2 class="text-center text-headline-lg font-bold text-primary mb-12">실시간 안전 대시보드</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white p-10 rounded-2xl shadow-sm border border-outline-variant text-center">
+<div class="text-on-surface-variant text-label-md font-bold uppercase tracking-wider mb-4">교통사고 사망자수 감소율</div>
+<div class="text-display-lg font-bold text-secondary mb-2">-14.8%</div>
+<div class="text-on-surface-variant text-label-sm">2023년 전년 동기 대비</div>
+</div>
+<div class="bg-white p-10 rounded-2xl shadow-sm border border-outline-variant text-center">
+<div class="text-on-surface-variant text-label-md font-bold uppercase tracking-wider mb-4">연간 자동차 검사 건수</div>
+<div class="text-display-lg font-bold text-primary mb-2">1,240만+</div>
+<div class="text-on-surface-variant text-label-sm">누적 정기/종합 검사 시행</div>
+</div>
+<div class="bg-white p-10 rounded-2xl shadow-sm border border-outline-variant text-center">
+<div class="text-on-surface-variant text-label-md font-bold uppercase tracking-wider mb-4">안전 교육 수료 인원</div>
+<div class="text-display-lg font-bold text-primary mb-2">850,000</div>
+<div class="text-on-surface-variant text-label-sm">운수종사자 및 일반인 수료</div>
+</div>
+</div>
+</div>
+</section>
+<!-- News & Notice Section -->
+<section class="py-24 bg-white">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+<div>
+<div class="flex justify-between items-center mb-8 border-b border-outline-variant pb-4">
+<h2 class="text-headline-md font-bold text-on-surface">공지사항</h2>
+<a class="text-on-surface-variant text-label-md flex items-center" href="#">더보기 <span class="material-symbols-outlined !text-sm">add</span></a>
+</div>
+<ul class="space-y-4">
+<li class="flex justify-between items-center group cursor-pointer border-b border-outline-variant/30 pb-4">
+<div class="flex-1 pr-8">
+<span class="inline-block bg-primary-container text-on-primary-container text-[10px] font-bold px-2 py-0.5 rounded mb-2">공고</span>
+<h4 class="text-body-lg font-semibold group-hover:text-primary transition-colors line-clamp-1">2024년 상반기 자동차 검사원 신규 채용 최종 합격자 공고</h4>
+</div>
+<span class="text-on-surface-variant text-label-sm">2024.05.20</span>
+</li>
+<li class="flex justify-between items-center group cursor-pointer border-b border-outline-variant/30 pb-4">
+<div class="flex-1 pr-8">
+<span class="inline-block bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-0.5 rounded mb-2">안내</span>
+<h4 class="text-body-lg font-semibold group-hover:text-primary transition-colors line-clamp-1">자동차 종합검사 수수료 조정 안내 (2024년 6월 1일부터)</h4>
+</div>
+<span class="text-on-surface-variant text-label-sm">2024.05.18</span>
+</li>
+<li class="flex justify-between items-center group cursor-pointer border-b border-outline-variant/30 pb-4">
+<div class="flex-1 pr-8">
+<span class="inline-block bg-surface-container-highest text-on-surface-variant text-[10px] font-bold px-2 py-0.5 rounded mb-2">알림</span>
+<h4 class="text-body-lg font-semibold group-hover:text-primary transition-colors line-clamp-1">서수원 자동차 검사소 전산망 점검에 따른 운영 중단 안내</h4>
+</div>
+<span class="text-on-surface-variant text-label-sm">2024.05.15</span>
+</li>
+</ul>
+</div>
+<div>
+<div class="flex justify-between items-center mb-8 border-b border-outline-variant pb-4">
+<h2 class="text-headline-md font-bold text-on-surface">보도자료</h2>
+<a class="text-on-surface-variant text-label-md flex items-center" href="#">더보기 <span class="material-symbols-outlined !text-sm">add</span></a>
+</div>
+<div class="grid grid-cols-1 gap-6">
+<div class="flex gap-6 group cursor-pointer">
+<div class="w-32 h-24 flex-shrink-0 bg-surface-container rounded-lg overflow-hidden">
+<img alt="News Image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOkrkckUR65AHwf3E-K130MjY2DTNys96EZlSOZnKxjxRFmhFIdwUOOdVnnhZLn2mOtUnW0dmefpSXwvsKTbtuo5YZCQ0hZH6axQq26CZdM1ulyjH_TPl5XfA__ti9m8WZSKaPcmv712AXjBI9xZQpook3zR4csabu0Fw2SqehN5jUbxZMhfogC4jE-1dESGX9jHBAyWXlrIVXQpdJpsX-lnaGvT-t39047CckX2J8QLQ4OQJ6m4tEiVoZenWEi-yO7U9AANoEHOXh"/>
+</div>
+<div class="flex flex-col justify-center">
+<h4 class="text-body-lg font-bold group-hover:text-primary transition-colors mb-2 line-clamp-2">KOTSA, 전세버스 특별 안전점검 실시... 행락철 사고 예방 총력</h4>
+<span class="text-on-surface-variant text-label-sm">2024.05.19</span>
+</div>
+</div>
+<div class="flex gap-6 group cursor-pointer">
+<div class="w-32 h-24 flex-shrink-0 bg-surface-container rounded-lg overflow-hidden">
+<img alt="News Image" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_FE5CmSpKxCWbGGC4QaC7NQPH6SiN9lb_Q_Ojw8nS5HBHu2d_JFB22tNmiMozrLsxBQDoR2BzL666yxoUMpNIpfOeV_8m3l3t8dgf1lAX0IblSuJv-X3lTA0MnCK5atz5ImjWOAetBU_fVKHnNem80Un8VeMIRlUchaEUzBWMRUoiYhEicSDXFhdC-nq9VBdY2GozZJG003GdI3Kce7U6WLoveCnPpBvHfMXeC0rDZElSt-6hvBUqIUTXmvnMqo2G6JD_ltbQbERB"/>
+</div>
+<div class="flex flex-col justify-center">
+<h4 class="text-body-lg font-bold group-hover:text-primary transition-colors mb-2 line-clamp-2">"졸음운전 예방해요" 교통안전공단, 고속도로 휴게소 캠페인 전개</h4>
+<span class="text-on-surface-variant text-label-sm">2024.05.17</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-tertiary text-white pt-20 pb-10">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-16 mb-16">
+<div class="col-span-1">
+<div class="text-2xl font-bold mb-6">KOTSA</div>
+<p class="text-label-sm leading-relaxed opacity-70 mb-8">
+                    (39660) 경상북도 김천시 혁신6로 17 (율곡동)<br/>
+                    한국교통안전공단<br/><br/>
+                    대표전화: 1577-0990 (09:00~18:00)<br/>
+                    주말 및 공휴일 제외
+                </p>
+<div class="flex gap-3">
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-all" href="#">
+<span class="material-symbols-outlined !text-xl">facebook</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-all" href="#">
+<span class="material-symbols-outlined !text-xl">play_circle</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition-all" href="#">
+<span class="material-symbols-outlined !text-xl">share</span>
+</a>
+</div>
+</div>
+<div class="col-span-1">
+<h4 class="text-headline-sm font-bold mb-6">정보공개/참여</h4>
+<ul class="space-y-3 text-label-md opacity-80">
+<li><a class="hover:text-primary-container" href="#">공공데이터 개방</a></li>
+<li><a class="hover:text-primary-container" href="#">사전정보공표</a></li>
+<li><a class="hover:text-primary-container" href="#">정보공개청구</a></li>
+<li><a class="hover:text-primary-container" href="#">예산절감 제안</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="text-headline-sm font-bold mb-6">이용안내</h4>
+<ul class="space-y-3 text-label-md opacity-80">
+<li><a class="hover:text-primary-container" href="#">개인정보처리방침</a></li>
+<li><a class="hover:text-primary-container" href="#">이용약관</a></li>
+<li><a class="hover:text-primary-container" href="#">오시는 길</a></li>
+<li><a class="hover:text-primary-container" href="#">사이트맵</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="text-headline-sm font-bold mb-6">유관기관</h4>
+<select class="w-full bg-white/10 border border-white/20 rounded-lg py-2 px-4 text-label-sm focus:ring-0 focus:border-white/40 mb-4">
+<option class="text-on-surface">국토교통부</option>
+<option class="text-on-surface">경찰청</option>
+<option class="text-on-surface">도로교통공단</option>
+</select>
+<div class="bg-white/5 p-4 rounded-xl">
+<p class="text-[11px] opacity-60 leading-tight">본 사이트는 이메일 무단수집을 거부하며, 게시된 정보가 무단 수집되는 것을 거부합니다.</p>
+</div>
+</div>
+</div>
+<div class="border-t border-white/10 pt-10 text-center">
+<p class="text-label-sm opacity-50">Copyright © 2024 Korea Transportation Safety Authority. All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+<script>
+    // Simple micro-interaction for numbers in dashboard
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-pulse');
+            }
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.text-display-lg').forEach(el => observer.observe(el));
+</script>
+</body></html>
